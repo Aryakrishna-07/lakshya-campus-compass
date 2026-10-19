@@ -43,7 +43,7 @@ function Page() {
           <div className="mt-6 flex gap-3"><Btn variant="onWine">Review answers</Btn><Btn variant="ghost" className="text-ivory hover:bg-ivory/10" onClick={() => { setDone(false); setAns(QS.map(() => null)); setI(0); }}><RotateCcw className="size-4" />Retry</Btn></div>
         </div>
         <Card className="col-span-7" title="By course outcome">
-          {[[4, 75], [5, 50], [6, 80]].map(([n, v]) => <div key={n} className="mb-4 flex items-center gap-3"><CO n={n} /><div className="flex-1"><Bar v={v} target={60} tone={v < 60 ? "wine" : "blue"} /></div><span className="font-mono text-sm">{v}%</span></div>)}
+          {([[4, 75], [5, 50], [6, 80]] as [number, number][]).map(([n, v]) => <div key={n} className="mb-4 flex items-center gap-3"><CO n={n} /><div className="flex-1"><Bar v={v} target={60} tone={v < 60 ? "wine" : "blue"} /></div><span className="font-mono text-sm">{v}%</span></div>)}
         </Card>
       </div>
     </Shell>
@@ -56,9 +56,9 @@ function Page() {
         <Card className="col-span-8">
           <div className="flex items-center justify-between text-sm"><span className="font-mono text-wine">Question {i + 1} of {QS.length}</span><span className={cn("text-xs text-success transition", saved ? "opacity-100" : "opacity-0")}>✓ Progress saved</span></div>
           <div className="mt-2"><Bar v={((i + 1) / QS.length) * 100} /></div>
-          <p className="mt-8 font-serif text-3xl font-semibold text-espresso">{QS[i].q}</p>
+          <p className="mt-8 font-serif text-3xl font-semibold text-espresso">{QS[i]!.q}</p>
           <div className="mt-6 space-y-3">
-            {QS[i].o.map((o, k) => (
+            {QS[i]!.o.map((o, k) => (
               <button key={o} onClick={() => pick(k)} className={cn("flex w-full items-center gap-4 rounded-2xl border px-5 py-4 text-left transition", ans[i] === k ? "border-wine bg-wine text-ivory" : "border-wine/20 bg-ivory hover:border-wine/60")}>
                 <span className={cn("grid size-7 place-items-center rounded-full border font-mono text-xs", ans[i] === k ? "border-ivory" : "border-wine/40 text-wine")}>{"ABCD"[k]}</span>{o}
               </button>

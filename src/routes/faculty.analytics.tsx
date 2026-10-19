@@ -24,7 +24,7 @@ const ROWS: [string, string, number[]][] = [
   ["1RV22CS023", "Rohan Iyer", [68, 52, 77, 38, 62, 35]],
   ["1RV22CS031", "Meghna Pillai", [90, 81, 88, 72, 80, 61]],
 ];
-const AVG = [0, 1, 2, 3, 4, 5].map((i) => Math.round(ROWS.reduce((s, r) => s + r[2][i], 0) / ROWS.length));
+const AVG = [0, 1, 2, 3, 4, 5].map((i) => Math.round(ROWS.reduce((s, r) => s + r[2][i]!, 0) / ROWS.length));
 const DIST = [2, 5, 11, 18, 14, 6];
 
 function Page() {

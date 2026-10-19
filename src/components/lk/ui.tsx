@@ -94,7 +94,7 @@ export function Bar({ v, target, tone = "wine" }: { v: number; target?: number; 
   );
 }
 
-export function Field({ label, children, error }: { label: string; children: ReactNode; error?: string }) {
+export function Field({ label, children, error }: { label: string; children: ReactNode; error?: string | undefined }) {
   return (
     <label className="block">
       <span className="eyebrow">{label}</span>

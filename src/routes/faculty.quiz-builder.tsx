@@ -31,7 +31,7 @@ function Page() {
   const [drag, setDrag] = useState<number | null>(null);
   const picked = sel.map((id) => BANK.find((b) => b.id === id)!);
   const perCO = [1, 2, 3, 4, 5, 6].map((n) => picked.filter((p) => p.co === n).length);
-  const move = (to: number) => { if (drag === null) return; const n = [...sel]; const [x] = n.splice(drag, 1); n.splice(to, 0, x); setSel(n); setDrag(to); };
+  const move = (to: number) => { if (drag === null) return; const n = [...sel]; const [x] = n.splice(drag, 1); n.splice(to, 0, x!); setSel(n); setDrag(to); };
 
   return (
     <Shell role="faculty">
