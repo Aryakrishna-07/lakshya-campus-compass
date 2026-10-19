@@ -112,9 +112,10 @@
   padding-bottom: 14px;
 }
 @utility stamp {
-  border-radius: 4px;
-  -webkit-mask: radial-gradient(5px at 5px 5px, transparent 98%, #000) -5px -5px / 14px 14px;
-  mask: radial-gradient(5px at 5px 5px, transparent 98%, #000) -5px -5px / 14px 14px;
+  border-radius: 6px;
+  outline: 2px dashed color-mix(in oklab, var(--wine) 35%, transparent);
+  outline-offset: -6px;
+  box-shadow: var(--shadow-paper);
 }
 @utility eyebrow {
   font-family: var(--font-mono);
